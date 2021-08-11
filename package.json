@@ -1,0 +1,21 @@
+{
+  "name": "projapi",
+  "version": "1.0.0",
+  "description": "random quotes api",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Masthan Shaik",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.7",
+    "nodemon": "^2.0.9"
+  },
+  "engines": {
+    "node": "v14.17.1"
+  }
+}
