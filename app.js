@@ -8,11 +8,11 @@ const cors = require('cors');
 
 const app = express();
 
-const quoteRoute = require('./routes/quote')
+const quoteRoute = require('./routes/quote');
 
 const port = process.env.PORT || 8666;
 
-mongoose.connect(process.env.DB_CONNECT, {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/quoteApi", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(()=> {
@@ -24,10 +24,10 @@ mongoose.connect(process.env.DB_CONNECT, {
 app.use(cors({
     "origin":"*",
     "methods": ['GET']
-}))
+}));
 
-app.use("/api", quoteRoute)
+app.use("/api", quoteRoute);
 
-app.listen(port, ()=> {
-    console.log(`QUOTE API  is running at ${port}`);
-})
+app.listen(port);
+
+module.exports = app
